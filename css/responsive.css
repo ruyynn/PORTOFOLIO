@@ -1,0 +1,79 @@
+/* ── TABLET ─────────────────────────── */
+@media (max-width: 1024px) {
+  :root { --section-gap: 90px; }
+
+  .about-grid  { grid-template-columns: 1fr; gap: 48px; }
+  .about-card  { position: static; }
+
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+
+  .ach-grid    { grid-template-columns: 1fr 1fr; }
+  .ach-featured { grid-column: span 2; }
+
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── MOBILE ─────────────────────────── */
+@media (max-width: 768px) {
+  :root { --section-gap: 72px; }
+
+  .container { padding: 0 20px; }
+
+  /* Navbar */
+  .nav-links  { display: none; }
+  .btn-hire   { display: none; }
+  .nav-burger { display: flex; }
+
+  /* Hero */
+  .hero { padding: 100px 20px 80px; }
+  .hero-stats {
+    padding: 16px 24px;
+    gap: 0;
+  }
+  .stat-item { padding: 0 16px; }
+  .stat-num  { font-size: 1.5rem; }
+
+  /* Skills */
+  .skills-grid { grid-template-columns: 1fr; }
+
+  /* Projects */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* Achievements */
+  .ach-grid     { grid-template-columns: 1fr; }
+  .ach-featured { grid-column: span 1; }
+
+  /* Certs */
+  .cert-grid    { grid-template-columns: 1fr; }
+
+  /* Articles */
+  .articles-grid { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-grid  { grid-template-columns: 1fr; }
+
+  /* Channel */
+  .channel-grid  { flex-direction: column; align-items: center; }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* Cursor off on touch */
+  .cursor, .cursor-follower { display: none; }
+  body { cursor: auto; }
+}
+
+@media (max-width: 480px) {
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn-primary,
+  .hero-cta .btn-outline { justify-content: center; }
+
+  .hero-stats { flex-direction: column; gap: 16px; padding: 24px 20px; }
+  .stat-divider { width: 40px; height: 1px; }
+}

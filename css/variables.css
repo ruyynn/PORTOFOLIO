@@ -1,0 +1,45 @@
+:root {
+  /* Colors */
+  --bg:          #060912;
+  --bg2:         #090e1a;
+  --bg3:         #0d1320;
+  --surface:     rgba(255,255,255,0.03);
+  --surface2:    rgba(255,255,255,0.06);
+  --surface3:    rgba(255,255,255,0.10);
+  --border:      rgba(255,255,255,0.07);
+  --border2:     rgba(255,255,255,0.13);
+  --border3:     rgba(255,255,255,0.20);
+
+  /* Accent palette */
+  --cyan:        #00e5ff;
+  --cyan-dim:    rgba(0,229,255,0.12);
+  --cyan-glow:   rgba(0,229,255,0.25);
+  --violet:      #7c3aed;
+  --violet-dim:  rgba(124,58,237,0.12);
+  --violet-glow: rgba(124,58,237,0.25);
+  --emerald:     #06d6a0;
+  --emerald-dim: rgba(6,214,160,0.12);
+  --red:         #ff4560;
+
+  /* Text */
+  --text:        #eef2ff;
+  --text2:       rgba(238,242,255,0.55);
+  --text3:       rgba(238,242,255,0.30);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --section-gap:  120px;
+  --container:    1200px;
+  --radius:       16px;
+  --radius-sm:    10px;
+  --radius-xs:    6px;
+
+  /* Transitions */
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --trans:        0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-slow:   0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}

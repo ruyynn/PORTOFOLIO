@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ruyynn — Web Pentester & Security Enthusiast. Specialized in responsible disclosure, ethical hacking, and security research." />
+  <meta name="keywords" content="web pentester, ethical hacker, security researcher, OSINT, responsible disclosure, Indonesia" />
+  <meta name="author" content="Natanael (Ruyynn)" />
+  <meta property="og:title" content="Ruyynn — Web Pentester & Security Enthusiast" />
+  <meta property="og:description" content="Security researcher focused on responsible disclosure and ethical hacking." />
+  <meta property="og:type" content="website" />
+  <title>Ruyynn — Web Pentester & Security Enthusiast</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/achievements.css" />
+  <link rel="stylesheet" href="css/certifications.css" />
+  <link rel="stylesheet" href="css/articles.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="mono">$</span> <span class="loader-name">ruyynn</span><span class="blink">_</span>
+      </div>
+      <div class="loader-bar"><div class="loader-bar-fill" id="loaderBar"></div></div>
+      <div class="loader-status mono" id="loaderStatus">Initializing...</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="mono accent">~/</span><span>ruyynn</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#achievements" class="nav-link" data-i18n="nav.achievements">Achievements</a></li>
+        <li><a href="#certifications" class="nav-link" data-i18n="nav.certs">Certifications</a></li>
+        <li><a href="#articles" class="nav-link" data-i18n="nav.articles">Articles</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-active" id="langLabel">EN</span>
+          <i class="fa-solid fa-globe"></i>
+        </button>
+        <a href="#contact" class="btn-hire" data-i18n="nav.hire">Hire Me</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#achievements" data-i18n="nav.achievements">Achievements</a></li>
+      <li><a href="#certifications" data-i18n="nav.certs">Certifications</a></li>
+      <li><a href="#articles" data-i18n="nav.articles">Articles</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ── HERO ─────────────────────────────────── -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="hero-content reveal">
+        <div class="hero-badge mono">
+          <span class="status-dot"></span>
+          <span data-i18n="hero.available">Available for security projects</span>
+        </div>
+        <h1 class="hero-name">Ruyynn</h1>
+        <p class="hero-role">
+          <span class="typewriter" id="typewriter"></span><span class="blink">|</span>
+        </p>
+        <p class="hero-intro" data-i18n="hero.intro">
+          Security researcher focused on uncovering vulnerabilities through ethical practice and responsible disclosure — protecting systems, not exploiting them.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span data-i18n="hero.cta1">View Projects</span>
+          </a>
+          <a href="#contact" class="btn-outline">
+            <span data-i18n="hero.cta2">Let's Talk Security</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num counter" data-target="30">0</span><span class="stat-plus">+</span>
+            <span class="stat-label" data-i18n="hero.stat1">Recon Targets</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num counter" data-target="11">0</span>
+            <span class="stat-label" data-i18n="hero.stat2">Vulns Found</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num counter" data-target="3">0</span>
+            <span class="stat-label" data-i18n="hero.stat3">CSIRT Acks</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span class="mono" data-i18n="hero.scroll">scroll</span>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ─────────────────────────────────── -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono" data-i18n="about.tag">01 / About</span>
+          <h2 class="section-title" data-i18n="about.title">The Mind Behind the Terminal</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="about-lead" data-i18n="about.lead">
+              I'm Natanael, known online as <strong>Ruyynn</strong> — a self-driven security researcher from Indonesia with a deep obsession for finding what others overlook.
+            </p>
+            <p data-i18n="about.p1">
+              My journey into cybersecurity wasn't a straight path. It started with curiosity — wanting to understand how systems work underneath the surface. That curiosity evolved into a methodology: structured reconnaissance, systematic enumeration, and rigorous responsible disclosure.
+            </p>
+            <p data-i18n="about.p2">
+              I don't just scan and report. I think like an attacker to defend like a professional. Every vulnerability I find is handled through proper disclosure channels — because the goal is always to make the internet safer, not to cause harm.
+            </p>
+            <p data-i18n="about.p3">
+              Recognized by multiple CSIRT institutions in Indonesia for responsible disclosure contributions, I'm committed to making real-world impact through ethical security research.
+            </p>
+            <div class="about-disclosure">
+              <i class="fa-solid fa-shield-check"></i>
+              <span data-i18n="about.disclosure">I am committed to responsible disclosure in every finding and will never misuse any discovered access.</span>
+            </div>
+          </div>
+          <div class="about-aside reveal">
+            <div class="about-card">
+              <div class="about-avatar">
+                <div class="avatar-ring"></div>
+                <div class="avatar-inner">
+                  <span class="mono">R_</span>
+                </div>
+              </div>
+              <div class="about-info">
+                <div class="info-row">
+                  <span class="info-label mono" data-i18n="about.name">Name</span>
+                  <span>Natanael (Ruyynn)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label mono" data-i18n="about.role">Role</span>
+                  <span data-i18n="about.roleVal">Web Pentester</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label mono" data-i18n="about.focus">Focus</span>
+                  <span data-i18n="about.focusVal">Responsible Disclosure</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label mono">Status</span>
+                  <span class="status-available">
+                    <span class="status-dot"></span>
+                    <span data-i18n="about.status">Open to work</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ─────────────────────────────────── -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono" data-i18n="skills.tag">02 / Skills</span>
+          <h2 class="section-title" data-i18n="skills.title">Arsenal & Expertise</h2>
+        </div>
+        <div class="skills-grid">
+
+          <div class="skill-category reveal">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fa-solid fa-shield-virus"></i></div>
+              <h3 data-i18n="skills.cyber">Cyber Security</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-meta"><span>Ethical Hacking</span><span class="skill-pct">90%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>Reconnaissance</span><span class="skill-pct">92%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="92"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>Information Gathering</span><span class="skill-pct">88%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>OSINT</span><span class="skill-pct">85%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>Responsible Disclosure</span><span class="skill-pct">95%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="95"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fa-solid fa-code"></i></div>
+              <h3 data-i18n="skills.programming">Programming</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-meta"><span>Python</span><span class="skill-pct">80%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>JavaScript</span><span class="skill-pct">72%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="72"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>Bash Scripting</span><span class="skill-pct">78%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="78"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>Java (Basic)</span><span class="skill-pct">45%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="45"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fa-brands fa-html5"></i></div>
+              <h3 data-i18n="skills.webdev">Web Development</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-meta"><span>HTML</span><span class="skill-pct">85%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>CSS</span><span class="skill-pct">78%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="78"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>PHP (Basic)</span><span class="skill-pct">50%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="50"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-meta"><span>MySQL (Basic)</span><span class="skill-pct">48%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-w="48"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ─────────────────────────────────── -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono" data-i18n="projects.tag">03 / Projects</span>
+          <h2 class="section-title" data-i18n="projects.title">Built in the Dark</h2>
+        </div>
+        <div class="projects-grid">
+
+          <div class="project-card featured reveal">
+            <div class="project-badge" data-i18n="projects.featured">Featured</div>
+            <div class="project-header">
+              <div class="project-icon"><i class="fa-solid fa-ghost"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/ruyynn/GhostIntel" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">GH05T — GhostIntel</h3>
+            <p class="project-desc" data-i18n="projects.ghost.desc">
+              An automated OSINT and reconnaissance framework built for efficient intelligence gathering on web targets. GhostIntel streamlines the recon phase by combining multiple data sources into a unified, actionable report.
+            </p>
+            <div class="project-stack">
+              <span>Python</span><span>Bash</span><span>OSINT</span><span>Recon</span><span>Automation</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/ruyynn/GhostIntel" target="_blank" rel="noopener" class="btn-project">
+                <i class="fa-brands fa-github"></i>
+                <span data-i18n="projects.viewGithub">View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-header">
+              <div class="project-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/ruyynn" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title" data-i18n="projects.recon.title">Recon Automation Suite</h3>
+            <p class="project-desc" data-i18n="projects.recon.desc">
+              A collection of scripts and tools designed to automate the reconnaissance phase of penetration testing. Covers subdomain enumeration, port scanning, and service fingerprinting.
+            </p>
+            <div class="project-stack">
+              <span>Python</span><span>Bash</span><span>Nmap</span><span>Automation</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/ruyynn" target="_blank" rel="noopener" class="btn-project">
+                <i class="fa-brands fa-github"></i>
+                <span data-i18n="projects.viewGithub">View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-header">
+              <div class="project-icon"><i class="fa-solid fa-binoculars"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/ruyynn" target="_blank" rel="noopener" class="project-link" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">OSINT Toolkit</h3>
+            <p class="project-desc" data-i18n="projects.osint.desc">
+              A modular toolkit for open-source intelligence operations. Aggregates data from public APIs, social media, and DNS records to build comprehensive target profiles.
+            </p>
+            <div class="project-stack">
+              <span>Python</span><span>APIs</span><span>OSINT</span><span>DNS</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/ruyynn" target="_blank" rel="noopener" class="btn-project">
+                <i class="fa-brands fa-github"></i>
+                <span data-i18n="projects.viewGithub">View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ACHIEVEMENTS ─────────────────────────────────── -->
+    <section class="achievements section" id="achievements">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono" data-i18n="ach.tag">04 / Achievements</span>
+          <h2 class="section-title" data-i18n="ach.title">Security Recognitions</h2>
+          <p class="section-sub" data-i18n="ach.sub">Acknowledged by official government CSIRT institutions in Indonesia for responsible vulnerability disclosure.</p>
+        </div>
+        <div class="ach-grid">
+
+          <div class="ach-card ach-featured reveal">
+            <div class="ach-glow"></div>
+            <div class="ach-top">
+              <div class="ach-icon"><i class="fa-solid fa-medal"></i></div>
+              <div class="ach-badge" data-i18n="ach.featured">Featured</div>
+            </div>
+            <div class="ach-org">Kartika CSIRT (TNI AD)</div>
+            <h3 class="ach-title" data-i18n="ach.kartika.title">Security Recognition — Military Institution</h3>
+            <ul class="ach-points">
+              <li data-i18n="ach.kartika.p1">Validated vulnerability report submitted</li>
+              <li data-i18n="ach.kartika.p2">Responsible disclosure accepted by TNI AD</li>
+              <li data-i18n="ach.kartika.p3">Officially acknowledged by Kartika CSIRT</li>
+            </ul>
+            <a href="https://instagram.com/ellreynn" target="_blank" rel="noopener" class="btn-cert">
+              <i class="fa-solid fa-certificate"></i>
+              <span data-i18n="ach.viewCert">View Certificate</span>
+            </a>
+          </div>
+
+          <div class="ach-card reveal">
+            <div class="ach-top">
+              <div class="ach-icon ach-icon-sm"><i class="fa-solid fa-shield-check"></i></div>
+            </div>
+            <div class="ach-org">CSIRT Kota Yogyakarta</div>
+            <h3 class="ach-title" data-i18n="ach.yogyakota.title">Vulnerability Acknowledgement</h3>
+            <ul class="ach-points">
+              <li data-i18n="ach.yogyakota.p1">Report acknowledged & validated</li>
+              <li data-i18n="ach.yogyakota.p2">Responsible disclosure process followed</li>
+            </ul>
+            <a href="https://instagram.com/ellreynn" target="_blank" rel="noopener" class="btn-cert btn-cert-sm">
+              <i class="fa-solid fa-certificate"></i>
+              <span data-i18n="ach.viewCert">View Certificate</span>
+            </a>
+          </div>
+
+          <div class="ach-card reveal">
+            <div class="ach-top">
+              <div class="ach-icon ach-icon-sm"><i class="fa-solid fa-shield-check"></i></div>
+            </div>
+            <div class="ach-org">CSIRT Kabupaten Yogyakarta</div>
+            <h3 class="ach-title" data-i18n="ach.yogyakab.title">Responsible Disclosure Verified</h3>
+            <ul class="ach-points">
+              <li data-i18n="ach.yogyakab.p1">Disclosure accepted and verified</li>
+              <li data-i18n="ach.yogyakab.p2">Security impact confirmed</li>
+            </ul>
+            <a href="https://instagram.com/ellreynn" target="_blank" rel="noopener" class="btn-cert btn-cert-sm">
+              <i class="fa-solid fa-certificate"></i>
+              <span data-i18n="ach.viewCert">View Certificate</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS ─────────────────────────────────── -->
+    <section class="certifications section" id="certifications">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono" data-i18n="cert.tag">05 / Certifications</span>
+          <h2 class="section-title" data-i18n="cert.title">Credentials & Training</h2>
+        </div>
+        <div class="cert-grid">
+
+          <div class="cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-lock"></i></div>
+            <div class="cert-body">
+              <h4 data-i18n="cert.infosec.title">Introduction to Information Security</h4>
+              <span class="cert-issuer">CyberAcademy.id</span>
+            </div>
+            <div class="cert-badge">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-user-secret"></i></div>
+            <div class="cert-body">
+              <h4 data-i18n="cert.ethicalhacker.title">Ethical Hacker For Dummies</h4>
+              <span class="cert-issuer">Komdigi Academy</span>
+            </div>
+            <div class="cert-badge">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <div class="cert-body">
+              <h4 data-i18n="cert.cyberintro.title">Intro to Cyber Security & Career Awareness</h4>
+              <span class="cert-issuer">Komdigi Academy</span>
+            </div>
+            <div class="cert-badge">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="cert-body">
+              <h4 data-i18n="cert.ai.title">Belajar Dasar AI</h4>
+              <span class="cert-issuer">Dicoding</span>
+            </div>
+            <div class="cert-badge">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ARTICLES ─────────────────────────────────── -->
+    <section class="articles section" id="articles">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono" data-i18n="art.tag">06 / Articles</span>
+          <h2 class="section-title" data-i18n="art.title">Writeups & Research</h2>
+        </div>
+        <div class="articles-grid">
+
+          <div class="article-card reveal">
+            <div class="article-header">
+              <div class="article-tags">
+                <span class="article-tag">OSINT</span>
+                <span class="article-tag">Beginner</span>
+              </div>
+              <span class="article-read mono">5 min read</span>
+            </div>
+            <h3 class="article-title" data-i18n="art.osint.title">OSINT for Beginners: What You Need to Know</h3>
+            <p class="article-excerpt" data-i18n="art.osint.desc">
+              A comprehensive introduction to Open Source Intelligence — covering methodologies, tools, and ethical considerations for beginners entering the security field.
+            </p>
+            <a href="https://coderlegion.com/13785/osint-for-beginners-what-you-need-to-know" target="_blank" rel="noopener" class="article-link">
+              <span data-i18n="art.read">Read Article</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="article-card reveal">
+            <div class="article-header">
+              <div class="article-tags">
+                <span class="article-tag">HTTP</span>
+                <span class="article-tag">Web</span>
+              </div>
+              <span class="article-read mono">4 min read</span>
+            </div>
+            <h3 class="article-title" data-i18n="art.http.title">HTTP Status Codes You Never Knew Existed</h3>
+            <p class="article-excerpt" data-i18n="art.http.desc">
+              Diving deep into obscure HTTP status codes that most developers never encounter — and how they can reveal valuable information from a security perspective.
+            </p>
+            <a href="https://coderlegion.com/13888/http-status-codes-you-never-knew-existed" target="_blank" rel="noopener" class="article-link">
+              <span data-i18n="art.read">Read Article</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ─────────────────────────────────── -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact-inner reveal">
+          <div class="contact-header">
+            <span class="section-tag mono" data-i18n="contact.tag">07 / Contact</span>
+            <h2 class="section-title" data-i18n="contact.title">Let's Secure Your Website</h2>
+            <p class="contact-sub" data-i18n="contact.sub">
+              Looking for a security assessment, responsible disclosure partnership, or want to discuss a project? Let's talk.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <a href="mailto:ruyynn25@gmail.com" class="contact-card">
+              <div class="cc-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="cc-body">
+                <span class="cc-label" data-i18n="contact.email">Email</span>
+                <span class="cc-value">ruyynn25@gmail.com</span>
+              </div>
+              <i class="fa-solid fa-arrow-right cc-arrow"></i>
+            </a>
+            <a href="https://github.com/ruyynn" target="_blank" rel="noopener" class="contact-card">
+              <div class="cc-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="cc-body">
+                <span class="cc-label">GitHub</span>
+                <span class="cc-value">github.com/ruyynn</span>
+              </div>
+              <i class="fa-solid fa-arrow-right cc-arrow"></i>
+            </a>
+            <a href="https://instagram.com/ellreynn" target="_blank" rel="noopener" class="contact-card">
+              <div class="cc-icon"><i class="fa-brands fa-instagram"></i></div>
+              <div class="cc-body">
+                <span class="cc-label">Instagram</span>
+                <span class="cc-value">@ellreynn</span>
+              </div>
+              <i class="fa-solid fa-arrow-right cc-arrow"></i>
+            </a>
+          </div>
+
+          <div class="channel-section">
+            <h3 class="channel-title" data-i18n="contact.channel">WhatsApp Channel</h3>
+            <div class="channel-grid">
+              <a href="https://whatsapp.com/channel/0029VbD0yVu6hENoPduZlT3o" target="_blank" rel="noopener" class="channel-card">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Channel EN</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://whatsapp.com/channel/0029VbCGqKeJkK7C3Za9vh2S" target="_blank" rel="noopener" class="channel-card">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Channel ID</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-cta">
+            <a href="mailto:ruyynn25@gmail.com" class="btn-primary btn-lg">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="contact.discuss">Discuss Security Project</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="mono accent">~/</span><span>ruyynn</span>
+        </div>
+        <p class="footer-copy mono" data-i18n="footer.copy">
+          &copy; 2025 Natanael (Ruyynn). Ethically built.
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/ruyynn" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+          <a href="https://instagram.com/ellreynn" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="mailto:ruyynn25@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/hero-canvas.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>
